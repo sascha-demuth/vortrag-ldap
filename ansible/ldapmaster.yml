@@ -1,0 +1,16 @@
+---
+- name: install Ldap-master
+  hosts: ldap_masters
+  become: true
+  roles:
+    - ldap
+  
+  tasks:
+    - name: copyover basic ldap-config
+      debug:
+        msg: dies ist erstmal nur ein test
+
+    - name: Copyover helperscripts
+      copy:
+        src: files/scripts/
+        dest: /opt/ldap/scripts

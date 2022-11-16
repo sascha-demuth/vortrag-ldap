@@ -1,0 +1,16 @@
+
+---
+all:
+  hosts:
+    # Vagrantfile.ntp
+    ldap1:
+      ansible_host: "192.168.56.10"
+
+  children:
+    ldap_servers:
+      hosts:
+        ldap1:
+    ldap_masters:
+      hosts:
+        ldap1:
+

@@ -1,0 +1,22 @@
+
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+AUTHORIZED_KEYS = lambda { Pathname.new(Dir.home).join(".ssh").glob("*.pub").map{|pubkey| File.readlines(pubkey).first.strip}.join("\n") }.call
+Vagrant.configure("2") do |config|
+  config.vm.define "ldap1" do |ldap1|
+       ldap1.vm.box = "ldap1"
+       ldap1.vm.box = "ubuntu/focal64"
+       ldap1.vm.hostname = "ldap1"
+#       server1.vm.network "private_network", ip: "192.168.56.20", name: "HostNetwork"
+#       config.vm.network "public_network", bridge: "en0: WLAN"
+
+       ldap1.vm.provision "shell", inline: <<-SHELL
+         adduser --gecos "" --shell /bin/bash --disabled-login ansible
+         echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible
+         mkdir -p /home/ansible/.ssh
+         echo "#{AUTHORIZED_KEYS}" >> /home/ansible/.ssh/authorized_keys
+         chown -R ansible:ansible /home/ansible/.ssh && chmod go-rwx /home/ansible/.ssh
+       SHELL
+  end
+end

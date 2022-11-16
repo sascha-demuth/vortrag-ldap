@@ -1,0 +1,9 @@
+---
+- name: Install Packages
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  loop:
+    - slapd
+    - ldap-utils
