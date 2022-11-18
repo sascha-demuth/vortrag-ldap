@@ -14,3 +14,12 @@
       copy:
         src: files/scripts/
         dest: /opt/ldap/scripts
+
+    - name: Copyover ldif-files
+      copy:
+        src: files/ldifs/
+        dest: /opt/ldap/ldifs
+    
+    - name: change rootpassword to test123
+      shell:
+        cmd:  /usr/bin/ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f /opt/ldap/ldifs/changeRootPass.ldif

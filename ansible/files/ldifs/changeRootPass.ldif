@@ -1,0 +1,11 @@
+
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+replace: olcRootDN
+olcRootDN: cn=admin,cn=config
+
+dn: olcDatabase={0}config,cn=config
+#olcRootDN: cn=admin,dc=nodomain
+changetype: modify
+replace: olcRootPW
+olcRootPW: {SSHA}demtQnKqRfgz8SUeZvIUZYmn1Qi5ZIW0
