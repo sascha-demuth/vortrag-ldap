@@ -6,20 +6,20 @@
     - ldap
   
   tasks:
-    - name: copyover basic ldap-config
-      debug:
-        msg: dies ist erstmal nur ein test
-
     - name: Copyover helperscripts
       copy:
         src: files/scripts/
         dest: /opt/ldap/scripts
+    # hier werden einige scripts überspielt, welche der Verdeutlichung der LDAP-Funktionalität dienen
 
     - name: Copyover ldif-files
       copy:
         src: files/ldifs/
         dest: /opt/ldap/ldifs
+    # alle für den Vortrag notwendigen ldif-dateien werden überspielt damit die zuhörer später den Talk nachvolziehen und
+    # vorallem nachbauen können
     
     - name: change rootpassword to test123
       shell:
         cmd:  /usr/bin/ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f /opt/ldap/ldifs/changeRootPass.ldif
+    # an dieser Stelle wird dass Passwort für den Root-DN, wie auch der RootDN- selbst gesetzt, damit ein Zugriff via Netzwerk möglich ist
