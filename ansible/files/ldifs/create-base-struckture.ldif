@@ -1,0 +1,5 @@
+dn: dc=homelab,dc=demuth
+objectClass: domain
+objectClass: dcObject
+dc: homelab
+

@@ -1,19 +1,5 @@
 version: 1
 
-dn: dc=homelab,dc=demuth
-objectClass: dcObject
-objectClass: organization
-objectClass: top
-dc: homelab
-o: demuth
-
-dn: cn=admin,dc=homelab,dc=demuth
-objectClass: organizationalRole
-objectClass: simpleSecurityObject
-cn: admin
-userPassword:: e1NTSEF9RTlDV2hzMnVXSDlCcHo4ZEZlVjc5TmhkWGxmZFk5azg=
-description: LDAP administrator
-
 dn: ou=users,dc=homelab,dc=demuth
 objectClass: organizationalUnit
 objectClass: top

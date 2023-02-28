@@ -5,3 +5,6 @@ ldapsearch -H ldap://192.168.56.20 -x -b cn=config -D "cn=admin,cn=config" -w te
 
 ldapsearch -x -b "dc=homelab,dc=demuth" -H ldap:/// -D "cn=admin,dc=homelab,dc=demuth" -w testing123
 
+ldapadd -x -H ldapi:/// -D "cn=admin,dc=homelab,dc=demuth" -w testing123 -f complete-basement.ldif
+# -x aktiviert den simple bind :wq
+

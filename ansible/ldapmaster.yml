@@ -19,7 +19,12 @@
     # alle für den Vortrag notwendigen ldif-dateien werden überspielt damit die zuhörer später den Talk nachvolziehen und
     # vorallem nachbauen können
     
-    - name: change rootpassword to test123
-      shell:
-        cmd:  /usr/bin/ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f /opt/ldap/ldifs/changeRootPass.ldif
-    # an dieser Stelle wird dass Passwort für den Root-DN, wie auch der RootDN- selbst gesetzt, damit ein Zugriff via Netzwerk möglich ist
+    - name: copyover ldap.conf
+      copy:
+        src: files/ldap.conf
+        dest: /etc/ldap/ldap.con
+    - name: copyover ldap.conf
+      copy:
+        src: files/ldap.conf
+        dest: /etc/ldap/ldap.conf
+    
