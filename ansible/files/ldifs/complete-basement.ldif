@@ -1,0 +1,88 @@
+version: 1
+
+dn: dc=homelab,dc=demuth
+objectClass: dcObject
+objectClass: organization
+objectClass: top
+dc: homelab
+o: demuth
+
+dn: cn=admin,dc=homelab,dc=demuth
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+userPassword:: e1NTSEF9RTlDV2hzMnVXSDlCcHo4ZEZlVjc5TmhkWGxmZFk5azg=
+description: LDAP administrator
+
+dn: ou=users,dc=homelab,dc=demuth
+objectClass: organizationalUnit
+objectClass: top
+ou: users
+
+dn: ou=groups,dc=homelab,dc=demuth
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=hans,ou=users,dc=homelab,dc=demuth
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: posixAccount
+cn: hans
+gidNumber: 10001
+homeDirectory: /home/hans
+sn: hans
+uid: hans
+uidNumber: 10001
+givenName: hans
+loginShell: /bin/bash
+userPassword:: e1NTSEF9Tzh2SXdwM2NLaXNaamU3cUpnMUZDcHhLajFlMHorTVQ=
+
+dn: cn=paul,ou=users,dc=homelab,dc=demuth
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: posixAccount
+cn: paul
+gidNumber: 10002
+homeDirectory: /home/sascha
+sn: paul
+uid: paul
+uidNumber: 10002
+givenName: paul
+loginShell: /bin/bash
+userPassword:: e1NTSEF9Tzh2SXdwM2NLaXNaamU3cUpnMUZDcHhLajFlMHorTVQ=
+
+dn: cn=sascha,ou=users,dc=homelab,dc=demuth
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: posixAccount
+cn: sascha
+gidNumber: 10000
+homeDirectory: /home/sascha
+sn: sascha
+uid: sascha
+uidNumber: 10000
+givenName: sascha
+loginShell: /bin/bash
+userPassword:: e1NTSEF9Tzh2SXdwM2NLaXNaamU3cUpnMUZDcHhLajFlMHorTVQ=
+
+dn: cn=admins,ou=groups,dc=homelab,dc=demuth
+objectClass: groupOfNames
+cn: admins
+member: cn=sascha,ou=users,dc=homelab,dc=demuth
+
+dn: cn=guests,ou=groups,dc=homelab,dc=demuth
+objectClass: groupOfNames
+cn: guests
+member: cn=paul,ou=users,dc=homelab,dc=demuth
+member: cn=sascha,ou=users,dc=homelab,dc=demuth
+
+dn: cn=members,ou=groups,dc=homelab,dc=demuth
+objectClass: groupOfNames
+cn: members
+member: cn=hans,ou=users,dc=homelab,dc=demuth
+member: cn=sascha,ou=users,dc=homelab,dc=demuth
+

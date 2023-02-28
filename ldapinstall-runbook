@@ -1,0 +1,10 @@
+apt-get install slapd ldap-utils- ldapscripts
+
+export PATH=$PATH:/usr/sbin
+hostnamectl set-hostname ldap.homelab.demuth
+echo "192.168.11.92 ldap.homenet.demuth">> /etc/hosts
+dpkg-reconfigure
+systemctl restart slapd
+
+bindDN ist cn=admin,dc=ldap,dc=homelab,dc=demuth
+--> wenn als domainname ldap.homelab.demuth angegeben wurde

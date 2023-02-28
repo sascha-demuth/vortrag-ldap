@@ -1,0 +1,14 @@
+dn: cn=ldap-admin,ou=users,dc=homelab,dc=demuth
+uid: ldap-admin
+gidNumber: 10001
+cn: ldap-admin
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+loginShell: /bin/bash
+homeDirectory: /home/ldap-admin
+sn: Admin
+givenName: LDAP
+uidNumber: 11111
+userPassword: {SSHA}O8vIwp3cKisZje7qJg1FCpxKj1e0z+MT

@@ -1,7 +1,7 @@
 // Programm zum hashen eines Passwortes für den rootdn (funktioniert natürlich auch für andere dn's
 slappasswd
-// cli-abfrage über die Konfiguration des LDAP-Servers 192.168.56.10 mit dem Passwort test123
-ldapsearch -H ldap://192.168.56.10 -x -b cn=config -D "cn=admin,cn=config" -w test123
+// cli-abfrage über die Konfiguration des LDAP-Servers 192.168.56.20 mit dem Passwort testing123
+ldapsearch -H ldap://192.168.56.20 -x -b cn=config -D "cn=admin,cn=config" -w testing123
 
-
+ldapsearch -x -b "dc=homelab,dc=demuth" -H ldap:/// -D "cn=admin,dc=homelab,dc=demuth" -w testing123
 

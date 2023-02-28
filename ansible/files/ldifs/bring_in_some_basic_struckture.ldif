@@ -1,0 +1,69 @@
+dn: ou=users,dc=homelab,dc=demuth
+ou: users
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=groups,dc=homelab,dc=demuth
+ou: groups
+objectClass: top
+objectClass: organizationalUnit
+
+dn: cn=admins,ou=groups,dc=homelab,dc=demuth
+objectClass: posixGroup
+gidNumber: 10000
+cn: admins
+
+dn: cn=members,ou=groups,dc=homelab,dc=demuth
+objectClass: posixGroup
+gidNumber: 10001
+cn: members
+
+dn: cn=guests,ou=groups,dc=homelab,dc=demuth
+objectClass: posixGroup
+gidNumber: 10002
+cn: guests
+
+dn: cn=sascha,ou=users,dc=homelab,dc=demuth
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+loginShell: /bin/bash
+homeDirectory: /home/sascha
+uid: sascha
+cn: sascha
+userPassword: {SSHA}O8vIwp3cKisZje7qJg1FCpxKj1e0z+MT
+uidNumber: 10000
+gidNumber: 10000
+sn: sascha
+givenName: sascha
+
+dn: cn=hans,ou=users,dc=homelab,dc=demuth
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+loginShell: /bin/bash
+homeDirectory: /home/hans
+uid: hans
+cn: hans
+userPassword: {SSHA}O8vIwp3cKisZje7qJg1FCpxKj1e0z+MT
+uidNumber: 10001
+gidNumber: 10001
+sn: hans
+givenName: hans
+
+dn: cn=paul,ou=users,dc=homelab,dc=demuth
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+loginShell: /bin/bash
+homeDirectory: /home/sascha
+uid: paul
+cn: paul
+userPassword: {SSHA}O8vIwp3cKisZje7qJg1FCpxKj1e0z+MT
+uidNumber: 10002
+gidNumber: 10002
+sn: paul
+givenName: paul
